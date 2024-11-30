@@ -21,14 +21,18 @@ public abstract class BaseFrame extends JFrame {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				if (windows.isEmpty()) System.exit(0);
-				windows.pop().show();
-				hide();
+				close();
 			}
 		});
 		initDesign();
 		initAction();
 		setVisible(true);
+	}
+	
+	public void close() {
+		if (windows.isEmpty()) System.exit(0);
+		windows.pop().show();
+		hide();
 	}
 	
 	public void changeFrame(JFrame frame) {
