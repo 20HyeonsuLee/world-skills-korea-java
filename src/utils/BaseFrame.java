@@ -29,6 +29,7 @@ public abstract class BaseFrame extends JFrame {
 		setVisible(true);
 	}
 	
+	// 닫기 버튼에서 호출하면 됨 
 	public void close() {
 		if (windows.isEmpty()) System.exit(0);
 		windows.pop().show();
